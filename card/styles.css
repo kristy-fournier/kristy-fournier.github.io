@@ -1,0 +1,27 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+h2 {
+    font-weight: normal;
+}
+[id="test"] {
+    font-weight: normal;
+}
+body {
+    background-color: #00ff23;
+    color: #ff9900;
+    align-items: center;
+}
+[id="pfpsect"] {
+    float: left;
+}
+
+[id="pfp"]{
+    max-width: 200px;
+}
+[id="mainCrap"] {
+    float: left;
+}
