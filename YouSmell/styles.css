@@ -1,3 +1,14 @@
-body {
-    align-self: center;
+#mainshoot {
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+h1 {
+    size: 200%;
+}
+[id="footerlolz"] {
+    margin-top: auto;
 }
