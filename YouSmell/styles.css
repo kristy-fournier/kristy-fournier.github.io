@@ -1,14 +1,35 @@
 #mainshoot {
     text-align: center;
-    min-height: 90vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: auto;
+
 }
 h1 {
     size: 200%;
 }
 [id="footerlolz"] {
     margin-top: auto;
+    min-height: 10vh;
+    margin-bottom: 0px;
+}
+
+.button {
+    margin: 5px auto;
+}
+
+.filebuttons {
+    display: flex;
+    margin: 10px;
+    height: 30px;
+}
+
+.announcediv {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20vh;
 }
