@@ -1,5 +1,6 @@
 let smell = 0;
 let clickpower = 1;
+/* this cookie reading thing was ''borrowed'' from the internet*/
 function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
