@@ -5,7 +5,11 @@
     flex-direction: column;
     max-width: 500px;
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 
+}
+body {
+    background: linear-gradient(180deg,#9fcfcf 60%,#ffffff);
 }
 h1 {
     size: 200%;
@@ -14,6 +18,8 @@ h1 {
     margin-top: auto;
     min-height: 10vh;
     margin-bottom: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
 }
 
 .button {
@@ -32,4 +38,7 @@ h1 {
     margin-top: 10px;
     text-align: center;
     min-height: 20vh;
+}
+#announcetext {
+    font-weight: normal;
 }

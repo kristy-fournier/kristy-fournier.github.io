@@ -1,7 +1,5 @@
-/* Place your CSS styles in this file */
-
 h1 {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "arial","Source Sans Pro", sans-serif;
     font-weight: normal;
 }
 h2 {
@@ -11,8 +9,10 @@ h2 {
     font-weight: normal;
 }
 body {
-    background-color: #00ff23;
-    color: #ff9900;
+    max-width: 500px;
+    background: linear-gradient(#00ff23 , #ff9900 60%);
+    background-attachment: fixed;
+    color: #ffffff;
     align-items: center;
 }
 [id="pfpsect"] {
@@ -21,6 +21,7 @@ body {
 
 [id="pfp"]{
     max-width: 200px;
+    margin-right: 10px;
 }
 [id="mainCrap"] {
     float: left;

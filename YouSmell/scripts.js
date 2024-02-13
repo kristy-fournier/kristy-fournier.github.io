@@ -1,45 +1,88 @@
 let smell = 0;
 let clickpower = 1;
+let deleteVerify = false;
+
+function screenRefresh() {
+  document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
+  document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click";
+  document.getElementById("announcetext").innerHTML = ""
+
+}
+
 function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
   }
 function smellIncrease() {
     smell = smell + clickpower;
-    document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
-    
-    document.cookie = "smell="+smell+"; path=/;";
+    screenRefresh();    
 }
 function powerIncrease() {
-    if (smell>100) {
-      smell = smell - 100 
-      clickpower = clickpower+1
+  if (smell>=100) {
+    if (event.ctrlKey && smell>=1000) {
+      smell = smell - 1000;
+      clickpower = clickpower+10;
+      screenRefresh();
 
-      document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
-      document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click";
-      document.cookie = "clickpower="+clickpower+"; path=/;"
+    }else if (event.shiftKey && smell>=10000) {
+      smell = smell - 10000;
+    clickpower = clickpower+100;
+    screenRefresh();
+    }  
+    else {
+      smell = smell - 100;
+      clickpower = clickpower+1;
+      screenRefresh();
     }
+    
+  }
 }
-function test() {
-  document.getElementById("announcetext").innerHTML = "this works!"
-}
-console.log(getCookie("smell"));
-smell = Number(getCookie("smell"));
-clickpower= Number(getCookie("clickpower"))
+function savecookies() {
+  document.cookie = "clickpower="+clickpower+"; path=/;";
+  document.cookie = "smell="+smell+"; path=/;";
+  document.getElementById("announcetext").innerHTML = "Saved!"
 
+
+}
+
+function loadcookies() {
+  smell = Number(getCookie("smell"));
+  clickpower= Number(getCookie("clickpower"));
+  screenRefresh();
+  document.getElementById("announcetext").innerHTML = "Loaded!"
+}
+function deletesave() {
+  if (deleteVerify == false) {
+    deleteVerify = true;
+    document.getElementById("announcetext").innerHTML = "Click again to confirm"
+  } else if (deleteVerify == true) {
+    document.cookie = "clickpower=1; path=/;";
+    document.cookie = "smell=0; path=/;";
+    document.getElementById("announcetext").innerHTML = "Reset!"
+    location.reload();
+  }
+  
+  
+}
+
+console.log(typeof(getCookie("smell")));
+console.log(typeof(getCookie("clickpower")));
 document.getElementById("smellbutton").onclick = smellIncrease;
 document.getElementById("powerbutton").onclick = powerIncrease;
-document.getElementById("savebutton").onclick = test
+document.getElementById("savebutton").onclick = savecookies;
+document.getElementById("loadbutton").onclick = loadcookies;
+document.getElementById("deletebutton").onclick = deletesave;
 document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
-document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click"
+document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click";
+screenRefresh();
