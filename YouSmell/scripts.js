@@ -9,6 +9,7 @@ function screenRefresh() {
 
 }
 
+/* this cookie reading thing was ''borrowed'' from the internet*/
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);

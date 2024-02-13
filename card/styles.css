@@ -19,6 +19,13 @@ body {
     float: left;
 }
 
+
+.test {
+    position:absolute;
+    right: 200px;
+    
+}
+
 [id="pfp"]{
     max-width: 200px;
     margin-right: 10px;
