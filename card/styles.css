@@ -10,7 +10,7 @@ h2 {
 }
 body {
     max-width: 500px;
-    background: linear-gradient(#00ff23 , #ff9900 60%);
+    background: linear-gradient(165deg, #00ff23 , #ff9900 60%);
     background-attachment: fixed;
     color: #ffffff;
     align-items: center;

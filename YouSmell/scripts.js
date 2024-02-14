@@ -58,7 +58,7 @@ function savecookies() {
 }
 
 function loadcookies() {
-  if (Number(getCookie("smell")) != 0 && Number(getCookie("clickpower")) !=0) {
+  if (Number(getCookie("clickpower")) !=0) {
     smell = Number(getCookie("smell"));
     clickpower= Number(getCookie("clickpower"));
     screenRefresh();
