@@ -1,7 +1,7 @@
 <rss version="2.0">
     <channel>
     <title>Dylan Page</title>
-    <link>http://127.0.0.1:3000</link>
-    <description>???</description>
+    <link>http://dylan-fournier.github.io</link>
+    <description>Updates to my new web projects and Epicwebsite</description>
     </channel>
 </rss>
