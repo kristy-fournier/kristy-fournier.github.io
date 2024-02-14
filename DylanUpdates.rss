@@ -1,7 +1,12 @@
 <rss version="2.0">
     <channel>
-    <title>Dylan Page</title>
-    <link>http://dylan-fournier.github.io</link>
-    <description>Updates to my new web projects and Epicwebsite</description>
+        <title>Dylan Page</title>
+        <link>http://dylan-fournier.github.io</link>
+        <description>Updates to my new web projects and Epicwebsite</description>
+        <item>
+            <title>You Smell: Web Edition is in alpha!</title>
+            <link>http://dylan-fournier.github.io/YouSmell</link>
+            <description>The once famous python/windows game is now IN THE WEB! Play today!</description>
+        </item>
     </channel>
 </rss>

@@ -58,10 +58,15 @@ function savecookies() {
 }
 
 function loadcookies() {
-  smell = Number(getCookie("smell"));
-  clickpower= Number(getCookie("clickpower"));
-  screenRefresh();
-  document.getElementById("announcetext").innerHTML = "Loaded!"
+  if (Number(getCookie("smell")) != 0 && Number(getCookie("clickpower")) !=0) {
+    smell = Number(getCookie("smell"));
+    clickpower= Number(getCookie("clickpower"));
+    screenRefresh();
+    document.getElementById("announcetext").innerHTML = "Loaded!"
+  }else {
+    screenRefresh();
+    document.getElementById("announcetext").innerHTML = "Error, Do you have a save?"
+  }
 }
 function deletesave() {
   if (deleteVerify == false) {
