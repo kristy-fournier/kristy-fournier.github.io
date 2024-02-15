@@ -8,5 +8,9 @@
             <link>http://dylan-fournier.github.io/YouSmell</link>
             <description>The once famous python/windows game is now IN THE WEB! Play today!</description>
         </item>
+        <item>
+            <title>New day, new update!</title>
+            <link>http://dylan-fournier.github.io/blog/2024/02/15</link>
+            <description>First blog post about my new stuff on the site</description>
     </channel>
 </rss>
