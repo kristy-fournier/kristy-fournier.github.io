@@ -12,5 +12,11 @@
             <title>New day, new update!</title>
             <link>http://dylan-fournier.github.io/blog/2024/02/15</link>
             <description>First blog post about my new stuff on the site</description>
+        </item>
+        <item>
+            <title>Working hard today, or hardly working?</title>
+            <link>http://dylan-fournier.github.io/blog/2024/02/16</link>
+            <description>Very little work was done today, besides the blog post and some python</description>
+        </item>
     </channel>
 </rss>
