@@ -26,5 +26,11 @@
             <description>Went to see a new movie, read all about it!</description>
             <pubdate>Sat, 17 Feb 2024 20:02:00 EST</pubdate>
         </item>
+        <item>
+            <title>Spongebob be wildin...</title>
+            <link>http://dylan-fournier.github.io/blog/2024/02/18</link>
+            <description>Most kids shows are really weird</description>
+            <pubdate>Sat, 18 Feb 2024 20:57:00 EST</pubdate>
+        </item>
     </channel>
 </rss>
