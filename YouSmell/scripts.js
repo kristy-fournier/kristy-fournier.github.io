@@ -1,12 +1,14 @@
 let smell = 0;
-let clickpower = 1;
+let dirt = 0;
 let deleteVerify = false;
-
+let dirtcost=100;
+let totalgain=1;
 function screenRefresh() {
   document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
-  document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click";
-  document.getElementById("announcetext").innerHTML = ""
-
+  document.getElementById("powerLine").innerHTML = "+"+totalgain+"% smell per click";
+  document.getElementById("announcetext").innerHTML = "";
+  document.getElementById("powerbutton").innerHTML = "+1% smell per click (Cost "+dirtcost+"% smell)";
+  totalgain = 1 +(dirt*1);
 }
 
 /* this cookie reading thing was ''borrowed'' from the internet*/
@@ -25,34 +27,30 @@ function getCookie(cname) {
   }
   return "";
   }
+function dirtcostcalc(){
+  return dirtcost +  Math.ceil(((dirt*4)/100)); 
+}
 function smellIncrease() {
-    smell = smell + clickpower;
+    if (event.ctrlKey) {
+      smell=1000000;
+    }
+    smell = smell + (dirt*1) + 1;
     screenRefresh();    
 }
-function powerIncrease() {
-  if (smell>=100) {
-    if (event.ctrlKey && smell>=1000) {
-      smell = smell - 1000;
-      clickpower = clickpower+10;
-      screenRefresh();
-
-    }else if (event.shiftKey && smell>=10000) {
-      smell = smell - 10000;
-    clickpower = clickpower+100;
-    screenRefresh();
-    }  
-    else {
-      smell = smell - 100;
-      clickpower = clickpower+1;
-      screenRefresh();
-    }
+function dirtIncrease() {
+  if (smell>=dirtcost) {
+    smell = smell - dirtcost;
+    dirtcost = dirtcostcalc();
+    dirt = dirt+1;
+    
     
   }
+  screenRefresh();
 }
 function savecookies() {
-  document.cookie = "clickpower="+clickpower+"; path=/;";
+  document.cookie = "clickpower="+dirt+"; path=/;";
   document.cookie = "smell="+smell+"; path=/;";
-  document.getElementById("announcetext").innerHTML = "Saved!"
+  document.getElementById("announcetext").innerHTML = "Saved!";
 
 
 }
@@ -60,9 +58,10 @@ function savecookies() {
 function loadcookies() {
   if (Number(getCookie("clickpower")) !=0) {
     smell = Number(getCookie("smell"));
-    clickpower= Number(getCookie("clickpower"));
+    dirt= Number(getCookie("clickpower"));
+    dirtcost = dirtcostcalc();
     screenRefresh();
-    document.getElementById("announcetext").innerHTML = "Loaded!"
+    document.getElementById("announcetext").innerHTML = "Loaded!";
   }else {
     screenRefresh();
     document.getElementById("announcetext").innerHTML = "Error, Do you have a save?"
@@ -75,20 +74,18 @@ function deletesave() {
   } else if (deleteVerify == true) {
     document.cookie = "clickpower=1; path=/;";
     document.cookie = "smell=0; path=/;";
-    document.getElementById("announcetext").innerHTML = "Reset!"
+    document.getElementById("announcetext").innerHTML = "Reset!";
     location.reload();
   }
   
   
 }
 
-console.log(typeof(getCookie("smell")));
-console.log(typeof(getCookie("clickpower")));
 document.getElementById("smellbutton").onclick = smellIncrease;
-document.getElementById("powerbutton").onclick = powerIncrease;
+document.getElementById("powerbutton").onclick = dirtIncrease;
 document.getElementById("savebutton").onclick = savecookies;
 document.getElementById("loadbutton").onclick = loadcookies;
 document.getElementById("deletebutton").onclick = deletesave;
 document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
-document.getElementById("powerLine").innerHTML = "+"+clickpower+"% smell per click";
+document.getElementById("powerLine").innerHTML = "+"+dirt+"% smell per click";
 screenRefresh();
