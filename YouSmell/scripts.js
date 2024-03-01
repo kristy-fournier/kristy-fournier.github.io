@@ -4,11 +4,12 @@ let deleteVerify = false;
 let dirtcost=100;
 let totalgain=1;
 function screenRefresh() {
+  totalgain = 1 +(dirt*1);
   document.getElementById("smellLine").innerHTML = "You are " + smell + "% smelly";
   document.getElementById("powerLine").innerHTML = "+"+totalgain+"% smell per click";
   document.getElementById("announcetext").innerHTML = "";
   document.getElementById("powerbutton").innerHTML = "+1% smell per click (Cost "+dirtcost+"% smell)";
-  totalgain = 1 +(dirt*1);
+  
 }
 
 /* this cookie reading thing was ''borrowed'' from the internet*/

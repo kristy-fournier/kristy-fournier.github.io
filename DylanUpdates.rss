@@ -44,5 +44,11 @@
             <description>Book review today!!!</description>
             <pubdate>Tue, 20 Feb 2024 22:25:00 EST</pubdate>
         </item>
+        <item>
+            <title>Chill Week</title>
+            <link>http://dylan-fournier.github.io/blog/2024/03/01</link>
+            <description>Just been kind of an odd week</description>
+            <pubdate>Fri, 1 Mar 2024 13:16:00 EST</pubdate>
+        </item>
     </channel>
 </rss>

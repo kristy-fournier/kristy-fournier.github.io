@@ -42,3 +42,7 @@ h1 {
     font-weight: normal;
 }
 
+#buildingbuttons {
+    display: flex;
+}
+
