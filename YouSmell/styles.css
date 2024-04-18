@@ -15,9 +15,9 @@ h1 {
     size: 200%;
 }
 [id="footerlolz"] {
-    margin-top: auto;
-    min-height: 10vh;
-    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0;
+    background: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
 }
