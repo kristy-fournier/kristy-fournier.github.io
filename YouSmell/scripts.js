@@ -57,7 +57,7 @@ function savecookies() {
 }
 
 function loadcookies() {
-  if (Number(getCookie("clickpower")) !=0) {
+  if (Number(getCookie("smell")) !=0) {
     smell = Number(getCookie("smell"));
     dirt= Number(getCookie("clickpower"));
     dirtcost = dirtcostcalc();
@@ -73,7 +73,7 @@ function deletesave() {
     deleteVerify = true;
     document.getElementById("announcetext").innerHTML = "Click again to confirm"
   } else if (deleteVerify == true) {
-    document.cookie = "clickpower=1; path=/;";
+    document.cookie = "clickpower=0; path=/;";
     document.cookie = "smell=0; path=/;";
     document.getElementById("announcetext").innerHTML = "Reset!";
     location.reload();
