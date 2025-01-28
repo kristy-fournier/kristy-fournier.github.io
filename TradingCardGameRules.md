@@ -1,6 +1,6 @@
 # Trading Card Game - Rules
 
-3-5 Players (playingcards.io Version is setup for 4)\
+3-7 Players (playingcards.io Version is setup for 4)\
 Standard Card Deck (No Jokers)
 ## Dealing (Automated)
 Shuffle the cards and give 5 face up (public cards), and 2 face down (private cards) to each player
@@ -46,3 +46,16 @@ Public: 9♠,3♠,Q♥,A♥,K♥
 The total score for this set is 5\
 Even if both private cards are matching suits, you get only 1 point for a matching public card\
 *Note that a perfect card with these 2 private cards is impossible because both have the same suit*
+
+---
+Private: 9♥,8♠\
+Public: 9♠,8♥,9♣,8♣,8♦
+
+1. Match of both, 3 points
+2. Match of both, 3 points 
+3. Match of number, 2 points
+4. Match of number, 2 points
+5. Match of number, 2 points
+
+The total score for this set is 12\
+*This is a perfect hand, and perfect score, and is extremly unlikely to happen*
