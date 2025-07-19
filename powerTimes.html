@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div style="position:relative;height:800px;">
+        <h1 id="text" style="margin:0;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);">Test</h1>
+        </div>
+        <script>
+            window.onload = function start() {
+                update();
+                autoUpdate();
+            }
+            textvalues = {"Green":"Off-Peak","Yellow":"Mid-Peak","Red":"On-Peak"}
+            function bgColor(colour) {
+                document.body.style.background = colour;
+                document.getElementById("text").innerHTML = textvalues[colour];
+            }
+            function update() {
+                    let now = new Date();
+                    let month = now.getMonth();
+                    let hour = now.getHours();
+                    if(month<=9 && month>=4) {
+                        // Summer
+                        if(hour < 7) {
+                            bgColor("Green");
+                        } else if (hour < 11){
+                            bgColor("Yellow");
+                        } else if (hour < 17){
+                            bgColor("Red");
+                        } else if (hour < 19){
+                            bgColor("Yellow");
+                        } else {
+                            bgColor("Green");
+                        }
+                    } else {
+                        //Winter
+                        if(hour < 7) {
+                            bgColor("Green");
+                        } else if (hour < 11){
+                            bgColor("Red");
+                        } else if (hour < 17){
+                            bgColor("Yellow");
+                        } else if (hour < 19){
+                            bgColor("Red");
+                        } else {
+                            bgColor("Green");
+                        }
+                    }
+                }
+            function autoUpdate() {
+                window.setInterval(update, 3000);
+            }
+        </script>
+    </body>
+
+</html>
